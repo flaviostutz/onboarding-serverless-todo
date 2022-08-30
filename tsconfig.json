@@ -1,0 +1,32 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "noImplicitReturns": false,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "rootDir": ".",
+    "outDir": "build",
+    "target": "ES2017",
+    "watch": false,
+    "lib": ["dom", "es2017"]
+  
+  },
+  "scripts": {
+    "slug": "slug.ts",
+    "test": "jest",
+    "slugJs": "slug.cjs"
+  },
+  "include": [
+    "slug.ts",
+    "unit.test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "public_html",
+    "test",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+ ]
+}
+
