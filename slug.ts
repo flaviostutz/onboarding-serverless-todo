@@ -5,7 +5,9 @@ export function generateRandomSlugs(amount: number): string[] {
     for (let i = 0; i < amount; ++i) {
         slugArray.push(generateSlug());
     }
+    console.log(slugArray);
     return slugArray as string[];
+
 }
 
-console.log(generateRandomSlugs(10));
+generateRandomSlugs(10);
