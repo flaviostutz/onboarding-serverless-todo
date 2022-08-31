@@ -16,7 +16,7 @@
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint",
-    "slug": "slug.ts",
+    "slug": "ts-node slug.ts",
     "test": "jest"
   },
   "dependencies": {
