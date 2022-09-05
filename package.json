@@ -21,7 +21,7 @@
     "posttest": "npm run lint",
     "slug": "ts-node slug.ts",
     "test": "jest",
-    "cow-slug": "cow-slug.ts",
+    "cow-slug": "node dist/cow-slug.js",
     "main": "server.js",
     "dev": "nodemon",
     "build": "etsc",

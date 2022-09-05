@@ -7,8 +7,6 @@ describe('generateRandomSlugs', () => {
       const piecesText = slugy[i].split("-");
       expect(piecesText.length).toBe(3);
     }
-    // console.log(slugy);
-    // console.log(slugy[3]);
   });
   test('The length of the slugs generator', () => {
     const slugy = generateRandomSlugs(10);

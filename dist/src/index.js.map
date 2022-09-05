@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/index.ts"],
-  "sourcesContent": ["console.log(\"Try npm run lint/fix!\");\n\nconst longString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet diam.';\n\nconst trailing = 'Semicolon'\n\n\t\t\tconst why={am:'I tabbed?'};\n\nconst iWish = \"I didn't have a trailing space...\"; \n\nconst sicilian = true;;\n\nconst vizzini = (!!sicilian) ? !!!sicilian : sicilian;\n\nconst re = /foo   bar/;\n\nexport function doSomeStuff(withThis: string, andThat: string, andThose: string[]) {\n    //function on one line\n    if(!Boolean(andThose.length)) {return false;}\n    console.log(withThis);\n    console.log(andThat);\n    console.dir(andThose);\n    console.log(longString, trailing, why, iWish, vizzini, re);\n    return;\n}\n// TODO: more examples\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,QAAQ,IAAI,uBAAuB;AAEnC,MAAM,aAAa;AAEnB,MAAM,WAAW;AAEd,MAAM,MAAI,EAAC,IAAG,YAAW;AAE5B,MAAM,QAAQ;AAEd,MAAM,WAAW;AAAK;AAEtB,MAAM,UAAW,CAAC,CAAC,WAAY,CAAC,CAAC,CAAC,WAAW;AAE7C,MAAM,KAAK;AAEJ,SAAS,YAAY,UAAkB,SAAiB,UAAoB;AAE/E,MAAG,CAAC,QAAQ,SAAS,MAAM,GAAG;AAAC,WAAO;AAAA,EAAM;AAC5C,UAAQ,IAAI,QAAQ;AACpB,UAAQ,IAAI,OAAO;AACnB,UAAQ,IAAI,QAAQ;AACpB,UAAQ,IAAI,YAAY,UAAU,KAAK,OAAO,SAAS,EAAE;AACzD;AACJ;",
-  "names": []
-}
