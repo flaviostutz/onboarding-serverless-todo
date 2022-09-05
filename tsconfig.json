@@ -3,14 +3,29 @@
   "compilerOptions": {
     "noImplicitReturns": false,
     "noImplicitAny": true,
-    "moduleResolution": "node",
-    "module": "commonjs",
     "rootDir": ".",
-    "outDir": "build",
-    "target": "ES2017",
+    "target": "esnext",
+    "module": "esnext",
     "watch": false,
-    "lib": ["dom", "es2017"]
-  
+    "allowJs": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": [
+      "esnext"
+    ],
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
   },
   "scripts": {
     "slug": "slug.ts",
@@ -18,6 +33,7 @@
     "slugJs": "slug.cjs"
   },
   "include": [
+    "src/**/*",
     "slug.ts",
     "unit.test/**/*.ts"
   ],
@@ -29,4 +45,3 @@
     "**/*.test.ts",
  ]
 }
-

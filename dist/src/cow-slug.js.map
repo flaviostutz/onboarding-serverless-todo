@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/cow-slug.ts"],
+  "sourcesContent": ["import think from \"cowsay\";\nimport { generateSlug } from \"random-word-slugs\";\n\nconsole.log(think.say({ text: generateSlug() }));\n\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA,oBAAkB;AAClB,+BAA6B;AAE7B,QAAQ,IAAI,cAAAA,QAAM,IAAI,EAAE,UAAM,uCAAa,EAAE,CAAC,CAAC;",
+  "names": ["think"]
+}

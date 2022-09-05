@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../slug.ts"],
+  "sourcesContent": ["import { generateSlug } from 'random-word-slugs';\n\nexport function generateRandomSlugs(amount: number): string[] {\n    const slugArray: string[] = [];\n    for (let i = 0; i < amount; ++i) {\n        slugArray.push(generateSlug());\n    }\n    console.log(slugArray);\n    return slugArray as string[];\n\n}\n\ngenerateRandomSlugs(10);"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,+BAA6B;AAEtB,SAAS,oBAAoB,QAA0B;AAC1D,QAAM,YAAsB,CAAC;AAC7B,WAAS,IAAI,GAAG,IAAI,QAAQ,EAAE,GAAG;AAC7B,cAAU,SAAK,uCAAa,CAAC;AAAA,EACjC;AACA,UAAQ,IAAI,SAAS;AACrB,SAAO;AAEX;AAEA,oBAAoB,EAAE;",
+  "names": []
+}
