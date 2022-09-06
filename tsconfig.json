@@ -34,9 +34,9 @@
   },
   "include": [
     "src/**/*",
-    "slug.ts",
+    "src/slug.ts",
     "unit.test/**/*.ts"
-  ],
+, "dist/letsgo.ts"  ],
   "exclude": [
     "node_modules",
     "public_html",

@@ -8,15 +8,15 @@ const trailing = 'Semicolon'
 
 const iWish = "I didn't have a trailing space..."; 
 
-const sicilian = true;;
+const sicilian = true;
 
-const vizzini = (!!sicilian) ? !!!sicilian : sicilian;
+const vizzini = (sicilian) ? !sicilian : sicilian;
 
-const re = /foo   bar/;
+const re = /foo {3}bar/;
 
 export function doSomeStuff(withThis: string, andThat: string, andThose: string[]) {
     //function on one line
-    if(!Boolean(andThose.length)) {return false;}
+    if(!andThose.length) {return false;}
     console.log(withThis);
     console.log(andThat);
     console.dir(andThose);
