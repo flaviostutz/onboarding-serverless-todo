@@ -4,4 +4,3 @@ node_modules
 eslintignore
 jest.config.js
 tsconfig.json.save
-DS_Store
