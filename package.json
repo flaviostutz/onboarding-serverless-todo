@@ -6,7 +6,8 @@
     "@types/node": "^16.11.56",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
-    "esbuild": "^0.15.7",
+    "esbuild": "^0.15.10",
+    "esbuild-jest-transform": "^1.1.0",
     "esbuild-node-tsc": "^2.0.2",
     "eslint": "^8.23.0",
     "gts": "^4.0.0",
@@ -55,5 +56,6 @@
   "bugs": {
     "url": "https://github.com/nielsmijnster/onboarding-serverless-users/issues"
   },
-  "homepage": "https://github.com/nielsmijnster/onboarding-serverless-users#readme"
+  "homepage": "https://github.com/nielsmijnster/onboarding-serverless-users#readme",
+  "allowOverwrite": true
 }

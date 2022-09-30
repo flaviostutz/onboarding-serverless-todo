@@ -1,9 +1,9 @@
  {
   "compilerOptions": {
     // copied from @tsconfig/node14/tsconfig.json (not working on ci)
-    "lib": ["ESNext"],
+    "lib": ["ESNEXT"],
     "module": "commonjs",
-    "target": "ESNext",
+    "target": "es2020",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
