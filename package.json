@@ -55,10 +55,5 @@
   "bugs": {
     "url": "https://github.com/nielsmijnster/onboarding-serverless-users/issues"
   },
-  "homepage": "https://github.com/nielsmijnster/onboarding-serverless-users#readme",
-  "jest": {
-    "transformIgnorePatterns": [
-        "/node_modules/@mdhnpm/(?!react-cube-loading-spinner)"
-    ]
-  }
+  "homepage": "https://github.com/nielsmijnster/onboarding-serverless-users#readme"
 }
