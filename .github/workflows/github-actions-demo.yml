@@ -32,4 +32,13 @@ jobs:
     - run: npm test
     - run: npm run start --if-present
 
+  esbuild:
+    minify: false
+    bundle: true
+    sourcemap: true
+    watch:
+      pattern:
+        ['src/**/*.ts']
+      ignore: ['.serverless/**/*', '.build', '.esbuild']
+
       
