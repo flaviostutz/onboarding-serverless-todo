@@ -10,4 +10,4 @@ export function generateRandomSlugs(amount: number): string[] {
 
 }
 
-generateRandomSlugs(10);
+// generateRandomSlugs(10);

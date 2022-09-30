@@ -12,7 +12,7 @@
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
   },
   "scripts": {
     "slug": "slug.ts",
