@@ -40,5 +40,12 @@ jobs:
       pattern:
         ['src/**/*.ts']
       ignore: ['.serverless/**/*', '.build', '.esbuild']
+    - run: npm run build --if-present
+    - run: npm test
+    - run: npm run start --if-present
+
+      
+      
+
 
       
