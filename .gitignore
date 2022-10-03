@@ -3,5 +3,4 @@ build
 dist
 node_modules
 eslintignore
-jest.config.js
 tsconfig.json.save
