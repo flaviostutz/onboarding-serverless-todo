@@ -1,31 +1,23 @@
-{
-  "extends": "./node_modules/gts/tsconfig-google.json",
+ {
   "compilerOptions": {
-    "noImplicitReturns": false,
-    "noImplicitAny": true,
-    "rootDir": ".",
-    "target": "esnext",
-    "module": "esnext",
-    "watch": false,
-    "allowJs": true,
-    "removeComments": true,
-    "resolveJsonModule": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
+    // copied from @tsconfig/node14/tsconfig.json (not working on ci)
+    "lib": ["ESNEXT"],
+    "module": "commonjs",
+    "target": "es2020",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
-    "strict": true,
-    "lib": [
-      "esnext"
-    ],
     "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "moduleResolution": "Node",
-    "skipLibCheck": true,
+    "preserveConstEnums": true,
+  },
+  "parserOptions.projects": {
+    "include": [
+      "src/**/*"
+    ],
   },
   "scripts": {
     "slug": "slug.ts",
@@ -33,15 +25,10 @@
     "slugJs": "slug.cjs"
   },
   "include": [
-    "src/**/*",
-    "slug.ts",
-    "unit.test/**/*.ts"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "public_html",
-    "test",
-    "**/*.spec.ts",
-    "**/*.test.ts",
- ]
+    "**/**.test.ts"
+  ]
 }
