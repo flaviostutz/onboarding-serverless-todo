@@ -54,7 +54,7 @@ module.exports = {
     "max-depth": ["error", 4],
     "max-len": ["error", { code: 120, comments: 100, ignoreTemplateLiterals: true, ignoreStrings: true, ignoreTrailingComments: true, ignoreUrls: true }],
     "no-bitwise": "error",
-    "no-plusplus": "error",
+    // "no-plusplus": "error",
     "no-debugger": "error",
     "@shopify/jest/no-snapshots": "error",
     "max-nested-callbacks": ["error", { max: 5 }],

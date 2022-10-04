@@ -1,4 +1,4 @@
-import { generateRandomSlugs } from "./slug";
+import { generateRandomSlugs } from "../src/slug";
 
 describe('generateRandomSlugs', () => {
   test('Generates 3 hyphens seperated words', () => {

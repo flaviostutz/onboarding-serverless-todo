@@ -14,6 +14,11 @@
     "baseUrl": ".",
     "preserveConstEnums": true,
   },
+  "parserOptions.projects": {
+    "include": [
+      "src/**/*"
+    ],
+  },
   "scripts": {
     "slug": "slug.ts",
     "test": "jest",
