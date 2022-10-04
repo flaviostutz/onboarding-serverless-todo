@@ -30,7 +30,7 @@
     "dev": "nodemon",
     "build": "etsc",
     "start": "node dist/cow-slug.js",
-    "lint": "eslint"
+    "lint": "eslint 'src/**/*.ts?(x)'"
   },
   "dependencies": {
     "cowsay": "^1.5.0",
