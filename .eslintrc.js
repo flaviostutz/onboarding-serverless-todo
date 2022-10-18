@@ -16,7 +16,7 @@ module.exports = {
         // necessary to make import rules to find files
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.src/functions/handler.ts', '.tsx'],
       },
     },
   },

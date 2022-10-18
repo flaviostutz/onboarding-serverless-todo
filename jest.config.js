@@ -4,11 +4,9 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).+(ts|tsx|js)'],
   transform: {
-      '\\.^.+\\.jsx?$': 'esbuild-jest',
-    },
+    '\\.^.+\\.jsx?$': 'esbuild-jest',
+  },
 };
-
-
 
 
 // "transform": {
