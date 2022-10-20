@@ -38,11 +38,11 @@
     "posttest": "npm run lint",
     "slug": "ts-node slug.ts",
     "test": "jest",
-    "cow-slug": "node lib/cow-slug.js",
+    "cow-slug": "node dist/cow-slug.js",
     "main": "server.js",
     "dev": "nodemon",
     "build": "etsc",
-    "start": "node lib/cow-slug.js",
+    "start": "node dist/cow-slug.js",
     "lint": "eslint 'src/**/*.ts?(x)'"
   },
   "engines": {
