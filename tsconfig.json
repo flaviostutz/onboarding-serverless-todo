@@ -18,20 +18,17 @@
         "noUnusedParameters": true,
         "removeComments": true,
         "sourceMap": true,
-        "outDir": "lib"
+        "outDir": "dist"
   },
   "parserOptions.projects": {
     "include": [
       "src/**/*"
     ],
   },
-  "include": ["src/**/*.ts", "serverless.ts", "index.ts", "index.ts", "src/functions/handler.ts", "src/functions/handler.js"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",
-    ".webpack/**/*",
-    "_warmup/**/*",
-    ".vscode/**/*",
     "**/**.test.ts"
   ],
   "ts-node": {

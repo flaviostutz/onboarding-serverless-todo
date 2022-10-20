@@ -179,7 +179,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/full-lambda-function/dev/1666098617776-2022-10-18T13:10:17.776Z/full-lambda-function.zip"
+                "S3Key": "serverless/full-lambda-function/dev/1666255668655-2022-10-20T08:47:48.655Z/full-lambda-function.zip"
               },
               "Handler": "src/functions/handler.person",
               "Runtime": "nodejs12.x",
@@ -204,7 +204,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/full-lambda-function/dev/1666098617776-2022-10-18T13:10:17.776Z/full-lambda-function.zip"
+                "S3Key": "serverless/full-lambda-function/dev/1666255668655-2022-10-20T08:47:48.655Z/full-lambda-function.zip"
               },
               "Handler": "src/functions/handler.personId",
               "Runtime": "nodejs12.x",
@@ -222,24 +222,24 @@
               "PersonIdLogGroup"
             ]
           },
-          "PersonLambdaVersionCzZh41IohO7Y1vthLTkvQ9SecUVCsIIyORu2nJQV1U": {
+          "PersonLambdaVersion7w8GDlzDXqfFqp20LyfqEJksX3NlJWpe5EgxJchtk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PersonLambdaFunction"
               },
-              "CodeSha256": "ywJazdBTVho783p6c88oJuKw6fjep1hwfQP0M8naFIM="
+              "CodeSha256": "I1xzSaDioQk5CAgbWmP3eEfa9d/Pmg+rCNV+2p+mEG0="
             }
           },
-          "PersonIdLambdaVersion3ClBxL87cKw3FHiiXXTWVb2WvjbzPIi1wQOo0ebE": {
+          "PersonIdLambdaVersionvLfDIPi8nnL5D6VZp2XHxy5lMPBBSKDUjkkK0mBcdk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PersonIdLambdaFunction"
               },
-              "CodeSha256": "ywJazdBTVho783p6c88oJuKw6fjep1hwfQP0M8naFIM="
+              "CodeSha256": "I1xzSaDioQk5CAgbWmP3eEfa9d/Pmg+rCNV+2p+mEG0="
             }
           },
           "ApiGatewayRestApi": {
@@ -404,7 +404,7 @@
               "Name": "full-lambda-function-dev | Validate request body and querystring parameters"
             }
           },
-          "ApiGatewayDeployment1666098617287": {
+          "ApiGatewayDeployment1666255668072": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -504,7 +504,7 @@
           "PersonLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PersonLambdaVersionCzZh41IohO7Y1vthLTkvQ9SecUVCsIIyORu2nJQV1U"
+              "Ref": "PersonLambdaVersion7w8GDlzDXqfFqp20LyfqEJksX3NlJWpe5EgxJchtk"
             },
             "Export": {
               "Name": "sls-full-lambda-function-dev-PersonLambdaFunctionQualifiedArn"
@@ -513,7 +513,7 @@
           "PersonIdLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PersonIdLambdaVersion3ClBxL87cKw3FHiiXXTWVb2WvjbzPIi1wQOo0ebE"
+              "Ref": "PersonIdLambdaVersionvLfDIPi8nnL5D6VZp2XHxy5lMPBBSKDUjkkK0mBcdk"
             },
             "Export": {
               "Name": "sls-full-lambda-function-dev-PersonIdLambdaFunctionQualifiedArn"
@@ -636,11 +636,6 @@
         "bundle": true,
         "minify": false,
         "sourcemap": true,
-        "exclude": "aws-sdk",
-        "target": "node14",
-        "define": {
-          "require.resolve": "undefined"
-        },
         "platform": "node",
         "concurrency": 10
       }
@@ -669,7 +664,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "PersonLambdaVersionCzZh41IohO7Y1vthLTkvQ9SecUVCsIIyORu2nJQV1U"
+        "versionLogicalId": "PersonLambdaVersion7w8GDlzDXqfFqp20LyfqEJksX3NlJWpe5EgxJchtk"
       },
       "personId": {
         "handler": "src/functions/handler.personId",
@@ -695,7 +690,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "PersonIdLambdaVersion3ClBxL87cKw3FHiiXXTWVb2WvjbzPIi1wQOo0ebE"
+        "versionLogicalId": "PersonIdLambdaVersionvLfDIPi8nnL5D6VZp2XHxy5lMPBBSKDUjkkK0mBcdk"
       }
     },
     "configValidationMode": "warn",
@@ -729,7 +724,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/full-lambda-function/dev/1666098617776-2022-10-18T13:10:17.776Z",
+    "artifactDirectoryName": "serverless/full-lambda-function/dev/1666255668655-2022-10-20T08:47:48.655Z",
     "artifact": "full-lambda-function.zip"
   }
 }

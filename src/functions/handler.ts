@@ -38,7 +38,6 @@ module.exports.personId = async (event: any) => {
     statusCode: 200,
     body: JSON.stringify(
       {
-
         message: 'Successfully retrieved a specific user!',
         result: usersArray[event.pathParameters.id],
         statusCode: 200,
