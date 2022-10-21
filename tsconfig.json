@@ -1,34 +1,42 @@
- {
+{
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    // copied from @tsconfig/node14/tsconfig.json (not working on ci)
-    "lib": ["ESNEXT"],
-    "module": "commonjs",
-    "target": "es2020",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "preserveConstEnums": true,
+
+        // copied from @tsconfig/node14/tsconfig.json (not working on ci)
+        "lib": ["ESNEXT"],
+        "module": "commonjs",
+        "target": "es2020",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+ //       "outDir": "dist",
+        "baseUrl": ".",
+        "preserveConstEnums": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "dist"
   },
   "parserOptions.projects": {
     "include": [
       "src/**/*"
     ],
   },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules/**/*",
+    ".serverless/**/*",
+    "**/**.test.ts"
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "scripts": {
     "slug": "slug.ts",
     "test": "jest",
     "slugJs": "slug.cjs"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/**.test.ts"
-  ]
+  }   
 }

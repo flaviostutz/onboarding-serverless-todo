@@ -1,6 +1,6 @@
-build
-.DS_Store
+.serverless
 dist
+.DS_Store
 node_modules
 eslintignore
 tsconfig.json.save

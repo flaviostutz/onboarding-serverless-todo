@@ -1,0 +1,52 @@
+service: full-lambda-function
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+ # configValidationMode: error
+
+plugins:
+  - serverless-esbuild
+
+package:
+  include:
+    src/**/*
+  exclude:
+    - node_modules/**/*
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    platform: node
+    concurrency: 10
+
+# you can overwrite defaults here
+
+functions:
+    person:
+      handler: src/functions/handler.person
+      events:
+        - http:
+            path: person
+            method: get
+    personId:
+      handler: src/functions/handler.personId
+      events:
+        - http:
+            path: personId/{id}
+            method: get
+            request: 
+              parameters: 
+                paths: 
+                  id: true
+
+
+
