@@ -12,7 +12,6 @@ on:
 jobs:
   productionDeployment:
     name: production deployment
-  package-deploy:
     runs-on: ubuntu-latest
     environment: Production
     strategy:
