@@ -4,7 +4,7 @@
 
 /*
 Task 11:
-Configure Github pipeline to deploy the Lambda functions to AWS automatically each time you push 
+Configure Github pipeline to deploy the Lambda functions to AWS automatically each time you push
 new code to the “main” branch.
 
 Use the same repo.
