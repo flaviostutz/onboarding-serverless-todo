@@ -10,10 +10,10 @@ on:
     branches: [ main ]
 
 jobs:
-  productionDeployment:
-    name: production deployment
+  devDeployment:
+    name: dev deployment
     runs-on: ubuntu-latest
-    environment: Production
+    environment: Develop
     strategy:
       matrix:
         node-version: [14.x]
@@ -37,7 +37,7 @@ jobs:
     - name: Install Plugin and Deploy
       uses: serverless/github-action@v3.1
       with:
-        args: -c "serverless plugin install --name serverless-esbuild && serverless deploy --stage production"
+        args: -c "serverless plugin install --name serverless-esbuild && serverless deploy --stage develop"
         entrypoint: /bin/sh    
     
       env:
