@@ -12,7 +12,7 @@ on:
 jobs:
   productionDeployment:
     name: production deployment
-    runs-on: macos-latest
+    runs-on: ubuntu
     environment: Production
     strategy:
       matrix:
