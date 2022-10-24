@@ -12,16 +12,17 @@ on:
 jobs:
   productionDeployment:
     name: production deployment
-    runs-on: macos-latest
+  package-deploy:
+    runs-on: ubuntu-latest
     environment: Production
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -31,7 +32,7 @@ jobs:
     #   with:
     #     args: deploy
     - name: Install Plugin and Deploy
-      uses: serverless/github-action@v1
+      uses: serverless/github-action@v3.1
       with:
         args: -c "serverless plugin install --name serverless-esbuild && serverless deploy --stage production"
         entrypoint: /bin/sh    
