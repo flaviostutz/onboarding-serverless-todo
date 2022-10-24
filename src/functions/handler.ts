@@ -2,22 +2,6 @@
 // Error: ENOENT: no such file or directory, stat 'rverless-users/.build/.serverless'
 // src/libs/lambda.ts line 19 has a strange error because of the build process i was checking
 
-/*
-Task 11:
-Configure Github pipeline to deploy the Lambda functions to AWS automatically each time you push
-new code to the “main” branch.
-
-Use the same repo.
-
-Send me the PR and a screenshot of a call to a function deployed automatically by the pipeline run.
-
-Tips:
-
-https://github.com/flaviostutz/aws-serverless-static-website/blob/main/.github/workflows/dev-deploy.yml
-
-https://github.com/flaviostutz/gh-workflows-serverless
-*/
-
 
 const usersArray =
   [{
