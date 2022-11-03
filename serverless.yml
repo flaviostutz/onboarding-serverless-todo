@@ -1,26 +1,31 @@
-service: full-lambda-function
+service: full-lambda-function-dynamodbNext
 
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   stage: dev
   region: eu-west-1
- # configValidationMode: error
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:DeleteItem"
+            - "dynamodb:Scan"
+          Resource: '*'
 
 plugins:
   - serverless-esbuild
-
+  - serverless-offline
 package:
-  include:
-    src/**/*
+  include: src/**/*
   exclude:
     - node_modules/**/*
 
-custom:
   esbuild:
     bundle: true
     minify: false
@@ -28,25 +33,37 @@ custom:
     platform: node
     concurrency: 10
 
-# you can overwrite defaults here
-
 functions:
-    person:
-      handler: src/functions/handler.person
-      events:
-        - http:
-            path: person
-            method: get
-    personId:
-      handler: src/functions/handler.personId
-      events:
-        - http:
-            path: personId/{id}
-            method: get
-            request: 
-              parameters: 
-                paths: 
-                  id: true
+  createUser:
+    handler: src/functions/handlers.createUser
+    events:
+      - httpApi:
+          path: /user
+          method: post
+  getUsersList:
+    handler: src/functions/handlers.getUsersList
+    events:
+      - httpApi:
+          path: /UsersListNext
+          method: get
+  getUserById:
+    handler: src/functions/handlers.getUserById
+    events:
+      - httpApi:
+          path: /user/{id}
+          method: get
 
-
-
+resources:
+  Resources:
+    UsersListTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        TableName: UsersListNext
+        AttributeDefinitions:
+          - AttributeName: userID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userID
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        

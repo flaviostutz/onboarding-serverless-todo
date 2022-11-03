@@ -1,24 +1,20 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Deploy API's and Lambda's serverless
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  build:
-
-    runs-on: macos-latest
-
+  devDeployment:
+    name: dev deployment
+    runs-on: ubuntu-latest
+    environment: Develop
     strategy:
       matrix:
-        node-version: [16.15.1]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -31,9 +27,15 @@ jobs:
     - run: npm run lint
     - run: npm test
     - run: npm run start
+    - name: Install Plugin and Deploy
+      uses: serverless/github-action@v3.1
+      with:
+        args: -c "serverless plugin install --name serverless-esbuild && serverless deploy --stage develop"
+        entrypoint: /bin/sh    
     
-      
-      
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 
       
