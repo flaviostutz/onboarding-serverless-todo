@@ -1,14 +1,19 @@
+/* eslint-disable import/order */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable no-else-return */
 /* eslint-disable complexity */
 /* eslint-disable import/group-exports */
 
+import https from 'https';
 import { v4 } from "uuid";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import AWS from 'aws-sdk';
 import axios from 'axios';
+import AWSXRay from 'aws-xray-sdk-core';
 
-const docClient = new AWS.DynamoDB.DocumentClient();
+AWSXRay.captureHTTPsGlobal(https);
+const aws = AWSXRay.captureAWS(AWS);
+const docClient = new aws.DynamoDB.DocumentClient();
 const tableName = "UsersListNext";
 
 // this func calls the randomuser api, where we extract the 3 properties from for our POST call

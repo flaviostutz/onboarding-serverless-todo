@@ -7,6 +7,9 @@ provider:
   runtime: nodejs14.x
   stage: dev
   region: eu-west-1
+  tracing: 
+    lambda: true
+    apiGateway: true
   iam:
     role:
       statements:
@@ -21,6 +24,7 @@ provider:
 plugins:
   - serverless-esbuild
   - serverless-offline
+  - serverless-plugin-tracing
 package:
   include: src/**/*
   exclude:
@@ -36,18 +40,21 @@ package:
 functions:
   createUser:
     handler: src/functions/handlers.createUser
+    tracing: true
     events:
       - httpApi:
           path: /user
           method: post
   getUsersList:
     handler: src/functions/handlers.getUsersList
+    tracing: true
     events:
       - httpApi:
           path: /UsersListNext
           method: get
   getUserById:
     handler: src/functions/handlers.getUserById
+    tracing: true
     events:
       - httpApi:
           path: /user/{id}
