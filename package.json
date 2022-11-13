@@ -1,0 +1,23 @@
+{
+  "name": "onboarding-serverless-users",
+  "version": "1.0.0",
+  "description": "This repo is meant to be used for PR analysis of people learning serverless framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "say": "cowsay \"I'm a moooodule\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BielCoelho/onboarding-serverless-users.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BielCoelho/onboarding-serverless-users/issues"
+  },
+  "homepage": "https://github.com/BielCoelho/onboarding-serverless-users#readme",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  }
+}
