@@ -21,21 +21,21 @@ provider:
             - "dynamodb:Scan"
           Resource: '*'
 
+custom:
+  alerts:
+    stages: # Optionally - select which stages to deploy alarms to
+      - dev     
+
 plugins:
   - serverless-esbuild
   - serverless-offline
   - serverless-plugin-tracing
+  - serverless-plugin-aws-alerts    
+
 package:
   include: src/**/*
   exclude:
     - node_modules/**/*
-
-  esbuild:
-    bundle: true
-    minify: false
-    sourcemap: true
-    platform: node
-    concurrency: 10
 
 functions:
   createUser:
@@ -59,7 +59,14 @@ functions:
       - httpApi:
           path: /user/{id}
           method: get
-
+  troubleMaker:          
+    handler: src/functions/handlers.troubleMaker
+    tracing: true
+    events:
+      - httpApi:
+          path: /whichException/{whichOne}
+          method: get
+    
 resources:
   Resources:
     UsersListTable:
@@ -73,4 +80,37 @@ resources:
           - AttributeName: userID
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        
+    CustomAlarmLatency:
+      Type: AWS::CloudWatch::Alarm
+      Properties:
+        AlarmDescription: 'My custom alarm latency'
+        AlarmActions:
+          - !Ref InvocationAlarmSNSTopic
+        Namespace: 'AWS/Lambda'
+        EvaluationPeriods: 3
+        MetricName: Duration
+        Statistic: Average
+        Threshold: 1000
+        ComparisonOperator: GreaterThanThreshold
+        Period: 60
+        TreatMissingData: missing
+    CustomAlarmErrors:
+      Type: AWS::CloudWatch::Alarm
+      Properties:
+        AlarmDescription: 'My custom alarm errors'
+        AlarmActions:
+          - !Ref InvocationAlarmSNSTopic
+        Namespace: 'AWS/Lambda'
+        EvaluationPeriods: 2
+        MetricName: Errors
+        Statistic: Sum
+        Threshold: 2
+        ComparisonOperator: GreaterThanThreshold
+        Period: 60
+        TreatMissingData: missing
+    InvocationAlarmSNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        Subscription:
+          - Endpoint: niels.mijnster@nn-group.com
+            Protocol: email

@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable import/order */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable no-else-return */
@@ -99,4 +100,26 @@ export const getUserById = async (event: APIGatewayProxyEvent): Promise<APIGatew
     statusCode: 201,
     body: JSON.stringify(getAllData.Item),
   };
+};
+
+export const troubleMaker = async (event: APIGatewayProxyEvent) => {
+  const clientParam = event.pathParameters?.whichOne;
+
+  if (clientParam === "exception") {
+    return {
+      statusCode: 422,
+      body: JSON.stringify({ error: "exception on purpose" }),
+    };
+  } else if (clientParam === "latency") {
+    // throw new Error('Authentication Failed');
+    // this one throws the err and email will be sent
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ ok: "We just waited for a second!" }),
+    };
+  } else if (clientParam === "status") {
+    throw new Error('Authentication Failed');
+  }
 };
