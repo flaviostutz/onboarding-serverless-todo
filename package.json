@@ -67,6 +67,7 @@
     "offline": "^0.0.1",
     "random-word-slugs": "^0.1.6",
     "serverless-offline": "^11.1.2",
+    "serverless-plugin-aws-alerts": "^1.7.5",
     "serverless-plugin-typescript": "^2.1.4",
     "ts-esbuild": "^1.0.1",
     "ts-node": "^10.9.1",
