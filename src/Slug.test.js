@@ -1,6 +1,4 @@
 import { SlugCLI } from './Slug.js'
-// const slug = require('./Slug.js')
-// const { SlugCLI } = slug
 
 describe("SlugCLI returns the right amount of words", () => {
     test("should return 10 words if no parameters are passed", () => {
